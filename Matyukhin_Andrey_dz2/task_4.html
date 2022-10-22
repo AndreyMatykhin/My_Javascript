@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework_dz-4</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
+
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
+
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
+
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+  <script>
+    "use strict";
+
+    console.log(sum(inputNumber('a'), inputNumber('b')));
+    console.log(dif(inputNumber('a'), inputNumber('b')));
+    console.log(mult(inputNumber('a'), inputNumber('b')));
+    console.log(div(inputNumber('a'), inputNumber('b')));
+
+    /**
+    * Функция запрашивает число.
+    * @numName {number} название вводимого параметра
+    * @return {number} введенное число
+    */
+    function inputNumber(numName = '') {
+      return Number(prompt(`Введите число ${numName}`));
+    }
+
+    /**
+    * Функция суммирует числа a и b.
+    * @a {number} первое число
+    * @b {number} второе число
+    * @return {number} результат операции
+    */
+    function sum(a, b) {
+      return a + b;
+    }
+
+    /**
+    * Функция вычитает из большего передаваемого числа меньшее.
+    * @a {number} первое число
+    * @b {number} второе число
+    * @return {number} результат операции
+    */
+    function dif(a, b) {
+      if (a > b) {
+        return a - b;
+      } else if (b > a) {
+        return b - a;
+      } else {
+        return a + b;
+      }
+    }
+
+    /**
+    * Функция перемножает вводимы числа.
+    * @a {number} первое число
+    * @b {number} второе число
+    * @return {number} результат операции
+    */
+    function mult(a, b) {
+      return a * b;
+    }
+
+    /**
+      * Функция делит друг на друга введенные числа.
+      * @a {number} первое число
+      * @b {number} второе число
+      * @return {number} результат операции
+      */
+    function div(a, b) {
+      return b ? a / b : NaN;
+    } 
+  </script>
+</body>
+
+</html>
